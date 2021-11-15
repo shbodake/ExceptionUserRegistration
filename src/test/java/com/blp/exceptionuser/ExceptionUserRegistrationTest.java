@@ -28,4 +28,14 @@ public class ExceptionUserRegistrationTest {
         boolean actualResult = exceptionUserRegistration.firstName("BodAke");
         Assert.assertEquals(false, actualResult);
     }
+    @Test
+    public void givenEmailIdIsProperReturnTrue() {
+        boolean actualResult = exceptionUserRegistration.emailId("sayalibodake28@gmail.com");
+        Assert.assertEquals(true, actualResult);
+    }
+    @Test
+    public void givenEmailIdIsNotProperReturnFalse() {
+        boolean actualResult = exceptionUserRegistration.emailId("Sayalibodake28gmailcom");
+        Assert.assertEquals(false, actualResult);
+    }
 }
