@@ -49,4 +49,27 @@ public class ExceptionUserRegistrationTest {
         boolean actualResult = exceptionUserRegistration.mobileNumber("919850521236");
         Assert.assertEquals(false, actualResult);
     }
+    @Test
+    public void givenPasswordRule1IsProperReturnTrue() {
+        boolean actualResult = exceptionUserRegistration.passwordRule1("qwgthjkdl");
+        Assert.assertEquals(true, actualResult);
+    }
+
+    @Test
+    public void givenPasswordRule1IsNotProperReturnFalse() {
+        boolean actualResult = exceptionUserRegistration.passwordRule1("jnsdsjRcvc");
+        Assert.assertEquals(false, actualResult);
+    }
+
+    @Test
+    public void givenPasswordRule2IsProperReturnTrue() {
+        boolean actualResult = exceptionUserRegistration.passwordRule2("qwgthRLjkdl");
+        Assert.assertEquals(true, actualResult);
+    }
+
+    @Test
+    public void givenPasswordRule2IsNotProperReturnFalse() {
+        boolean actualResult = exceptionUserRegistration.passwordRule2("jnsdjcvcp");
+        Assert.assertEquals(false, actualResult);
+    }
 }
